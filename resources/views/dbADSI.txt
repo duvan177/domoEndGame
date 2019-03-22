@@ -1,0 +1,542 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Mar 22, 2019 at 08:03 PM
+-- Server version: 5.6.38
+-- PHP Version: 7.2.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `bdadsi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `atributosxtipo`
+--
+
+CREATE TABLE `atributosxtipo` (
+  `id` int(10) NOT NULL,
+  `idTipo` int(10) NOT NULL,
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `atributosxtipo`
+--
+
+INSERT INTO `atributosxtipo` (`id`, `idTipo`, `nombre`) VALUES
+(1, 1, 'Abierta - Cerrada'),
+(2, 2, 'Abierta - Cerrada'),
+(3, 3, 'Encedido - Apagado'),
+(4, 4, '0 - 100'),
+(5, 5, 'Encendido - Apagado'),
+(6, 7, 'Encendido - Apagado'),
+(7, 8, '16 - 32'),
+(8, 9, 'Encendido - Apagado'),
+(9, 6, 'Encendido - Apagado'),
+(10, 8, 'FanSpeed (1-3)'),
+(11, 8, 'Swing'),
+(12, 10, 'Apagado - Encendido');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `componentes`
+--
+
+CREATE TABLE `componentes` (
+  `id` int(10) NOT NULL,
+  `nomCompo` varchar(45) NOT NULL,
+  `idTipo` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `componentes`
+--
+
+INSERT INTO `componentes` (`id`, `nomCompo`, `idTipo`) VALUES
+(0, 'Bombillo', 3),
+(1, 'Puerta', 1),
+(2, 'Ventana', 2),
+(3, 'InterruptorLamparas', 9),
+(4, 'Dimmer', 4),
+(5, 'AireAcondicionado', 6),
+(6, 'SensorMovimiento', 7),
+(7, 'ControlTemperatura', 8),
+(8, 'Camara', 5),
+(9, 'pc_g123', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `estadoactualxcomponente`
+--
+
+CREATE TABLE `estadoactualxcomponente` (
+  `id` int(10) NOT NULL,
+  `idComponente` int(10) NOT NULL,
+  `idAtributoXtipo` int(10) NOT NULL,
+  `estadoActual` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `estadosxatributo`
+--
+
+CREATE TABLE `estadosxatributo` (
+  `id` int(10) NOT NULL,
+  `idAtributoXtipo` int(10) NOT NULL,
+  `Estado` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `estadosxatributo`
+--
+
+INSERT INTO `estadosxatributo` (`id`, `idAtributoXtipo`, `Estado`) VALUES
+(1, 1, 'Abierta'),
+(2, 2, 'Cerrada'),
+(3, 3, 'Apagado'),
+(4, 4, '85'),
+(5, 5, 'Encendido'),
+(6, 6, 'Apagado'),
+(7, 7, '30'),
+(8, 8, 'Apagado'),
+(9, 9, 'Encendido'),
+(10, 10, '3'),
+(11, 11, 'Encendido');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `horarios`
+--
+
+CREATE TABLE `horarios` (
+  `id` int(10) NOT NULL,
+  `HoraInicio` time NOT NULL,
+  `horaFinal` time NOT NULL,
+  `idPerfilAlarma` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `horarioxdia`
+--
+
+CREATE TABLE `horarioxdia` (
+  `idHorario` int(11) NOT NULL,
+  `Fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `horarioxperiodo`
+--
+
+CREATE TABLE `horarioxperiodo` (
+  `idHorario` int(11) NOT NULL,
+  `FechaInicio` date NOT NULL,
+  `FechaFin` date NOT NULL,
+  `diaSemana` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perfilesyalarmas`
+--
+
+CREATE TABLE `perfilesyalarmas` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `idUsuario` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `perfilesyalarmas`
+--
+
+INSERT INTO `perfilesyalarmas` (`id`, `nombre`, `idUsuario`) VALUES
+(35, 'nuevo', 4),
+(36, 'mio', 12),
+(38, 'prueba', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `programacionxcomponente`
+--
+
+CREATE TABLE `programacionxcomponente` (
+  `id` int(10) NOT NULL,
+  `idComponente` int(10) NOT NULL,
+  `idPerfilAlarma` int(10) NOT NULL,
+  `idAtributoXtipo` int(10) NOT NULL,
+  `EstadoProgramado` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `programacionxcomponente`
+--
+
+INSERT INTO `programacionxcomponente` (`id`, `idComponente`, `idPerfilAlarma`, `idAtributoXtipo`, `EstadoProgramado`) VALUES
+(28, 1, 38, 1, 'Abierta'),
+(29, 2, 38, 2, 'Abierta'),
+(30, 0, 38, 3, 'Apagado'),
+(31, 4, 38, 4, '20'),
+(32, 8, 38, 5, 'Apagado'),
+(33, 5, 38, 9, 'Encendido'),
+(34, 6, 38, 6, 'Encendido'),
+(35, 7, 38, 8, '28'),
+(36, 3, 38, 9, 'Encendido');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `nombre`) VALUES
+(1, 'administrador'),
+(2, 'usuario');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tipocomponente`
+--
+
+CREATE TABLE `tipocomponente` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tipocomponente`
+--
+
+INSERT INTO `tipocomponente` (`id`, `nombre`) VALUES
+(1, 'Puerta'),
+(2, 'Ventana'),
+(3, 'Luces'),
+(4, 'Dinner'),
+(5, 'Camara'),
+(6, 'Refrigeracion'),
+(7, 'Sensor'),
+(8, 'ControlTemperatura'),
+(9, 'Interruptor'),
+(10, 'portatil');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idRol` int(10) DEFAULT '2',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `idRol`, `remember_token`, `created_at`, `updated_at`) VALUES
+(4, 'chamo', 'admin@admin.com', NULL, '$2y$10$YlK/uK4ndAbpB5P8S2ppsu74FjKzniewDzCXWN0hdPMyTVYhgozVC', 2, NULL, '2019-03-15 07:15:17', '2019-03-15 07:15:17'),
+(5, 'felio', 'fsd@sokeok', NULL, '$2y$10$FVOdWZkVGZtHPuCimJbYyuM.tFd9vlgNsmT1phnawtQjqORgD0Qky', 2, NULL, '2019-03-18 23:50:53', '2019-03-18 23:50:53'),
+(10, 'west120', 'felipeestrada9803@outlook.es', NULL, '$2y$10$zaWCF3RkZjevBIh2M7BSYeMpfpkN4BL3mLIFqWfGJgencw4XhDonm', 2, NULL, '2019-03-19 00:55:58', '2019-03-19 00:55:58'),
+(11, 'wets', 'felipe@hotmail.com', NULL, '$2y$10$NV1Ki8uDBoQoZ6SEeZ4kweaq4NAiQyqxOjDjb93Rcg4h7RV.unKcO', 2, NULL, '2019-03-19 00:56:31', '2019-03-19 00:56:31'),
+(12, 'stiven', 'radikal123@mipene.com', NULL, '$2y$10$XJbRJqUGGcNqysRe/DR7r.zTnj2uCreuvotNF431HHuP4YVSwgtea', 2, NULL, '2019-03-19 00:58:05', '2019-03-19 00:58:05'),
+(13, 'duvan', 'duvannarvaez17@gmail.com', NULL, '$2y$10$oyPecJBzAuhc5UZDQkuiGO7EXjxYa0xs2uNrOjTJXzY1n6giOdBSq', 2, NULL, '2019-03-19 09:23:21', '2019-03-19 09:23:21'),
+(14, 'Cesar', 'csar@gmail.com', NULL, '$2y$10$e6FnA2y9rQtxy.KZav62wevjTMqhJbv/vCDcYCJVmbdb6SOEt2sRq', 2, NULL, '2019-03-21 20:37:46', '2019-03-21 20:37:46');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `atributosxtipo`
+--
+ALTER TABLE `atributosxtipo`
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD KEY `idTipo` (`idTipo`);
+
+--
+-- Indexes for table `componentes`
+--
+ALTER TABLE `componentes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idTipo` (`idTipo`);
+
+--
+-- Indexes for table `estadoactualxcomponente`
+--
+ALTER TABLE `estadoactualxcomponente`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idComponente` (`idComponente`,`idAtributoXtipo`),
+  ADD KEY `idAtributoXtipo` (`idAtributoXtipo`);
+
+--
+-- Indexes for table `estadosxatributo`
+--
+ALTER TABLE `estadosxatributo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idAtributoXtipo` (`idAtributoXtipo`);
+
+--
+-- Indexes for table `horarios`
+--
+ALTER TABLE `horarios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idPerfilAlarma` (`idPerfilAlarma`);
+
+--
+-- Indexes for table `horarioxdia`
+--
+ALTER TABLE `horarioxdia`
+  ADD KEY `idHorario` (`idHorario`);
+
+--
+-- Indexes for table `horarioxperiodo`
+--
+ALTER TABLE `horarioxperiodo`
+  ADD KEY `idHorario` (`idHorario`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `perfilesyalarmas`
+--
+ALTER TABLE `perfilesyalarmas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
+-- Indexes for table `programacionxcomponente`
+--
+ALTER TABLE `programacionxcomponente`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idComponente` (`idComponente`,`idPerfilAlarma`,`idAtributoXtipo`),
+  ADD KEY `atributosXtipo` (`idAtributoXtipo`),
+  ADD KEY `idPerfilAlarma` (`idPerfilAlarma`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tipocomponente`
+--
+ALTER TABLE `tipocomponente`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD KEY `idRol` (`idRol`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `atributosxtipo`
+--
+ALTER TABLE `atributosxtipo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `componentes`
+--
+ALTER TABLE `componentes`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `estadoactualxcomponente`
+--
+ALTER TABLE `estadoactualxcomponente`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `estadosxatributo`
+--
+ALTER TABLE `estadosxatributo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `horarios`
+--
+ALTER TABLE `horarios`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `perfilesyalarmas`
+--
+ALTER TABLE `perfilesyalarmas`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `programacionxcomponente`
+--
+ALTER TABLE `programacionxcomponente`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `tipocomponente`
+--
+ALTER TABLE `tipocomponente`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `atributosxtipo`
+--
+ALTER TABLE `atributosxtipo`
+  ADD CONSTRAINT `atributosxtipo_ibfk_1` FOREIGN KEY (`idTipo`) REFERENCES `tipocomponente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `componentes`
+--
+ALTER TABLE `componentes`
+  ADD CONSTRAINT `TipoComponente` FOREIGN KEY (`idTipo`) REFERENCES `tipocomponente` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `estadoactualxcomponente`
+--
+ALTER TABLE `estadoactualxcomponente`
+  ADD CONSTRAINT `estadoactualxcomponente_ibfk_1` FOREIGN KEY (`idAtributoXtipo`) REFERENCES `atributosxtipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `estadoactualxcomponente_ibfk_2` FOREIGN KEY (`idComponente`) REFERENCES `componentes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `estadosxatributo`
+--
+ALTER TABLE `estadosxatributo`
+  ADD CONSTRAINT `estadosxatributo_ibfk_1` FOREIGN KEY (`idAtributoXtipo`) REFERENCES `atributosxtipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `horarios`
+--
+ALTER TABLE `horarios`
+  ADD CONSTRAINT `horarios_ibfk_1` FOREIGN KEY (`idPerfilAlarma`) REFERENCES `perfilesyalarmas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `horarioxdia`
+--
+ALTER TABLE `horarioxdia`
+  ADD CONSTRAINT `horarioxdia_ibfk_1` FOREIGN KEY (`idHorario`) REFERENCES `horarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `horarioxperiodo`
+--
+ALTER TABLE `horarioxperiodo`
+  ADD CONSTRAINT `horarioxperiodo_ibfk_1` FOREIGN KEY (`idHorario`) REFERENCES `horarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `perfilesyalarmas`
+--
+ALTER TABLE `perfilesyalarmas`
+  ADD CONSTRAINT `perfilesyalarmas_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `programacionxcomponente`
+--
+ALTER TABLE `programacionxcomponente`
+  ADD CONSTRAINT `Componentes` FOREIGN KEY (`idComponente`) REFERENCES `componentes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `atributosXtipo` FOREIGN KEY (`idAtributoXtipo`) REFERENCES `atributosxtipo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `programacionxcomponente_ibfk_1` FOREIGN KEY (`idPerfilAlarma`) REFERENCES `perfilesyalarmas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`idRol`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
