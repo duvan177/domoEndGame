@@ -14,24 +14,11 @@
             <!-- Ejemplo de tabla Listado -->
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Categorías
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalNuevo">
-                        <i class="icon-plus"></i>&nbsp;Nuevo
+                        <i class="icon-plus"></i>&nbsp;Nuevo    
                     </button>
                 </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <select class="form-control col-md-3" id="opcion" name="opcion">
-                                  <option value="nombre">Nombre</option>
-                                  <option value="descripcion">Descripción</option>
-                                </select>
-                                <input type="text" id="texto" name="texto" class="form-control" placeholder="Texto a buscar">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
-                            </div>
-                        </div>
-                    </div>
+           
                     <table class="table table-bordered table-striped table-sm">
                         <thead>
                             <tr>
@@ -62,28 +49,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#">Ant</a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Sig</a>
-                            </li>
-                        </ul>
-                    </nav>
+                   
                 </div>
             </div>
             <!-- Fin ejemplo de tabla Listado -->
@@ -93,33 +59,40 @@
             <div class="modal-dialog modal-primary modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Agregar categoría</h4>
+                        <h4 class="modal-title">Agregar componente</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="/componentes" method="POST"  class="form-horizontal">
                             <div class="form-group row">
                                 <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre de categoría">
-                                    <span class="help-block">(*) Ingrese el nombre de la categoría</span>
+                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre del componente">
+                                  
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 form-control-label" for="email-input">Descripción</label>
+                                <label class="col-md-3 form-control-label">Tipo</label>
                                 <div class="col-md-9">
-                                    <input type="email" id="descripcion" name="descripcion" class="form-control" placeholder="Enter Email">
+                                    <input type="text" id="descripcion" name="TipoComp" class="form-control" placeholder="Tipo del componente">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 form-control-label">Estado</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="descripcion" name="Estado" class="form-control" placeholder="Estado del componente">
+                                </div>
+                            </div>
+                            <button type="sumbit" class="btn btn-secondary">Crear</button>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
+                    
+                       
+                      
+                  
+        
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->

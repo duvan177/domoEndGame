@@ -11,17 +11,10 @@
                 Mantenimiento
             </li>
             <li class="nav-item nav-dropdown">
-<<<<<<< HEAD
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Componentes</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="prueba"><i class="icon-bag"></i> Gestion</a>
-=======
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> componentes</a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-bag"></i> Gestion</a>
->>>>>>> 8c0aac4faaff0b15dc86c4c9b4bf4a176cde164b
                     </li>
                        <li class="nav-item">
                         <a class="nav-link" href="#"><i class="icon-bag"></i> Estado Components</a>

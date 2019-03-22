@@ -16,13 +16,14 @@ class ControllerCrud extends Controller
      */
     public function index()
     {
+        $datosb=componentesb::all();
         $datos= DB::table('componentes')
         ->join('tipocomponente', 'tipocomponente.id', '=', 'componentes.idTipo' )
         ->select('componentes.id', 'componentes.nomCompo', 'tipocomponente.nombre'  )
         ->get();
 
 
-       return view('Gestion', compact('datos') ); 
+       return view('Gestion', compact('datos','$datosb') ); 
 
     }
 
