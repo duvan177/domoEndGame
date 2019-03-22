@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contenido', function () {
     return view('contenido/contenido');
 });
+
+Route::resource('componentes', 'ControllerCrud');
