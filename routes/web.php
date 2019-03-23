@@ -23,3 +23,20 @@ Route::get('/contenido', function () {
 });
 
 Route::resource('componentes', 'ControllerCrud');
+
+Route::get('sendEmail', function () {
+    $data= array(
+
+        'name'=> "Ingreso no autorizado",
+
+    );
+
+Mail::send('emails.Alertas', $data, function ($message) {
+    $message->from('pilotoautomatic151@gmail.com', '');
+    $message->to('infoadsi151@gmail.com') -> subject("ingreso no autorizado ");
+    
+   
+    return "Alerta enviada satifactoriamente";
+});
+
+});
