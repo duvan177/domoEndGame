@@ -25,6 +25,7 @@ Route::get('/contenido', function () {
 //CRUD COMPONENTES NICOLAS ROJAS
 Route::resource('componentes', 'ControllerCrud');
 
+<<<<<<< HEAD
 // CONTROL COMPONENTES NICOLAS CHAMORRO
 Route::resource('control','controllerControl');
 Route::get('estados', 'atributoController@index');
@@ -32,3 +33,21 @@ Route::post('connect','atributoController@conectar');
 Route::post('disconnect','atributoController@desconectar');
 Route::post('aireAcondicionado','atributoController@aireAcondicionado');
 Route::get('recargar', 'atributoController@recargarTable');
+=======
+Route::get('sendEmail', function () {
+    $data= array(
+
+        'name'=> "Ingreso no autorizado",
+
+    );
+
+Mail::send('emails.Alertas', $data, function ($message) {
+    $message->from('pilotoautomatic151@gmail.com', '');
+    $message->to('infoadsi151@gmail.com') -> subject("ingreso no autorizado ");
+    
+   
+    return "Alerta enviada satifactoriamente";
+});
+
+});
+>>>>>>> 4e2daa76ab1ced0345d56b1985a3f14099bce0e0
