@@ -24,8 +24,6 @@ Route::get('/contenido', function () {
 
 //CRUD COMPONENTES NICOLAS ROJAS
 Route::resource('componentes', 'ControllerCrud');
-
-<<<<<<< HEAD
 // CONTROL COMPONENTES NICOLAS CHAMORRO
 Route::resource('control','controllerControl');
 Route::get('estados', 'atributoController@index');
@@ -33,7 +31,7 @@ Route::post('connect','atributoController@conectar');
 Route::post('disconnect','atributoController@desconectar');
 Route::post('aireAcondicionado','atributoController@aireAcondicionado');
 Route::get('recargar', 'atributoController@recargarTable');
-=======
+
 Route::get('sendEmail', function () {
     $data= array(
 
@@ -50,4 +48,3 @@ Mail::send('emails.Alertas', $data, function ($message) {
 });
 
 });
->>>>>>> 4e2daa76ab1ced0345d56b1985a3f14099bce0e0
