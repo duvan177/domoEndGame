@@ -22,4 +22,13 @@ Route::get('/contenido', function () {
     return view('contenido/contenido');
 });
 
+//CRUD COMPONENTES NICOLAS ROJAS
 Route::resource('componentes', 'ControllerCrud');
+
+// CONTROL COMPONENTES NICOLAS CHAMORRO
+Route::resource('control','controllerControl');
+Route::get('estados', 'atributoController@index');
+Route::post('connect','atributoController@conectar');
+Route::post('disconnect','atributoController@desconectar');
+Route::post('aireAcondicionado','atributoController@aireAcondicionado');
+Route::get('recargar', 'atributoController@recargarTable');

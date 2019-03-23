@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\componente;
-use App\Http\Requests;
-use App\componentesb;
-use DB;
-class ControllerCrud extends Controller
+
+
+class controllerControl extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,17 +15,10 @@ class ControllerCrud extends Controller
      */
     public function index()
     {
-    // $datosb=componentesb::all(); rojas yo quite esta variable no hacia nada (CHAMORRO)
+        $componente=componente::all(); 
+       
 
-        $datos= DB::table('componentes')
-        ->join('tipocomponente', 'tipocomponente.id', '=', 'componentes.idTipo' )
-        ->select('componentes.id', 'componentes.nombre as nomCompo', 'tipocomponente.nombre'  )
-        ->get();
-
-    //'$datosb' esto estaba en el compact estorbando ( CHAMORRO )
-
-       return view('Gestion', compact('datos') ); 
-
+        return view ( 'vistaComponentes' , compact('componente')) ;
     }
 
     /**
@@ -36,7 +28,7 @@ class ControllerCrud extends Controller
      */
     public function create()
     {
-       return view('Crear');
+      
     }
 
     /**
@@ -47,16 +39,7 @@ class ControllerCrud extends Controller
      */
     public function store(Request $request)
     {
-        $datos= new componentesb();
-        $datos->nombre= $request->input('Nombre');
-        $datos->TipoComp= $request->input('TipoComp');
-        $datos->Estado= $request->input('Estado');
-        $datos->save();
-
-        
-
-
-        return redirect('componentes');   
+        //
     }
 
     /**
@@ -67,7 +50,7 @@ class ControllerCrud extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -78,10 +61,7 @@ class ControllerCrud extends Controller
      */
     public function edit($id)
     {
-        
-        $datos= componentesb::where('id',$id)->first();
-        return view ('Modificar',['datos'=>$datos]);
-     
+        //
     }
 
     /**
@@ -93,14 +73,7 @@ class ControllerCrud extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datos =componentesb::find($id);
-
-        $datos->Nombre = $request->input('Nombre');  
-        $datos->TipoComp = $request->input('TipoComp');  
-        $datos->Estado = $request->input('Estado');  
-
-         $datos->save();
-         return redirect('componentes');
+        //
     }
 
     /**
@@ -111,8 +84,12 @@ class ControllerCrud extends Controller
      */
     public function destroy($id)
     {
-     
-    componentesb::find($id)->delete();
-    return redirect('componentes');
+        //
     }
+
+
+  
+  
+
+
 }

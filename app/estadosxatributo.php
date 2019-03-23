@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class componente extends Model
+class estadosxatributo extends Model
 {
-    //
+    
 }
+
+

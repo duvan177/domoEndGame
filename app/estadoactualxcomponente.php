@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class componente extends Model
+class estadoactualxcomponente extends Model
 {
     //
 }

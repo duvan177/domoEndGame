@@ -16,6 +16,8 @@
     <!-- Main styles for this application -->
     <link href="css/style.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- jQUERY --}}
+    <script src="js/jquery.min.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -96,8 +98,7 @@
         <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span>
     </footer>
 
-    <!-- Bootstrap and necessary plugins -->
-    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap and necessary plugins -->  
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pace.min.js"></script>
