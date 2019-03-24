@@ -51,9 +51,9 @@
                         <i class="fa fa-envelope-o"></i> Ingresos
                         <span class="badge badge-success">3</span>
                     </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-tasks"></i> Ventas
-                        <span class="badge badge-danger">2</span>
+                    <a href="<?php echo url('sendEmail') ?>" class="dropdown-item" id="btnModalEmail">
+                        <i class="fa fa-tasks"></i> Enviar Nofiticacion
+                        
                     </a>
                 </div>
             </li>
@@ -106,6 +106,14 @@
     <script src="js/Chart.min.js"></script>
     <!-- GenesisUI main scripts -->
     <script src="js/template.js"></script>
+    <script>
+$('#btnModalEmail').on('click', function(e){
+  e.preventDefault();
+  console.log('Hola mundo');
+  $('#modalEmail').modal('show').find('#modal-body').load($(this).attr('href'));
+});
+    </script>
+
 </body>
 
 </html>

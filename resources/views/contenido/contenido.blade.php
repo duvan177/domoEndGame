@@ -179,6 +179,22 @@
             <!-- /.modal-dialog -->
         </div>
         <!--Fin del modal-->
+        <div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+            <div id="modal-body">
+            </div>
+            <div class="modal-dialog modal-info" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Su correo se ha enviado correctamente</h4>
+                    </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>                        
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+        </div>
+        <!--Fin del modal email-->
+        
         <!-- Inicio del modal Eliminar -->
         <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-danger" role="document">
@@ -203,4 +219,5 @@
         </div>
         <!-- Fin del modal Eliminar -->
     </main>
+    
 @endsection

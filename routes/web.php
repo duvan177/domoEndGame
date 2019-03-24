@@ -32,6 +32,8 @@ Route::post('disconnect','atributoController@desconectar');
 Route::post('aireAcondicionado','atributoController@aireAcondicionado');
 Route::get('recargar', 'atributoController@recargarTable');
 
+
+
 Route::get('sendEmail', function () {
     $data= array(
 
@@ -41,7 +43,7 @@ Route::get('sendEmail', function () {
 
 Mail::send('emails.Alertas', $data, function ($message) {
     $message->from('pilotoautomatic151@gmail.com', '');
-    $message->to('infoadsi151@gmail.com') -> subject("ingreso no autorizado ");
+    $message->to('pilotoautomatic151@gmail.com') -> subject("ingreso no autorizado ");
     
    
     return "Alerta enviada satifactoriamente";
