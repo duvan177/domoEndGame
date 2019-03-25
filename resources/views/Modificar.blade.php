@@ -7,7 +7,7 @@
 
 
 
-<form  action="/componentes/{{$datos->id}}" method="POST">
+<form  action="/componentes/{{$datos->id}}/edit" method="POST">
   {{ csrf_field() }}
 
   

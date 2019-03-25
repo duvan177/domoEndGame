@@ -14,7 +14,7 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Componentes</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="prueba"><i class="icon-bag"></i> Gestion</a>
+                        <a class="nav-link" href="/Gestion"><i class="icon-bag"></i> Gestion</a>
                     </li>
                        <li class="nav-item">
                         <a class="nav-link" href="#"><i class="icon-bag"></i> Estado Components</a>

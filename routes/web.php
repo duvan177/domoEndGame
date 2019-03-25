@@ -31,7 +31,7 @@ Route::post('connect','atributoController@conectar');
 Route::post('disconnect','atributoController@desconectar');
 Route::post('aireAcondicionado','atributoController@aireAcondicionado');
 Route::get('recargar', 'atributoController@recargarTable');
-
+Route::post('componentes/{id}','ControllerCrud@update'); 
 
 
 Route::get('sendEmail', function () {

@@ -79,6 +79,7 @@
                 </div>
             </li>
         </ul>
+        
     </header>
 
     <div class="app-body">
@@ -90,8 +91,10 @@
  <!-- fin  sidebar -->
         <!-- Contenido Principal -->
         @yield('contenido')
+       
         <!-- /Fin del contenido principal -->
     </div>   
+        
 
     <footer class="app-footer">
         <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>

@@ -17,15 +17,12 @@ class ControllerCrud extends Controller
     public function index()
     {
     // $datosb=componentesb::all(); rojas yo quite esta variable no hacia nada (CHAMORRO)
-
+        $datosb=componentesb::all();
         $datos= DB::table('componentes')
         ->join('tipocomponente', 'tipocomponente.id', '=', 'componentes.idTipo' )
-        ->select('componentes.id', 'componentes.nombre as nomCompo', 'tipocomponente.nombre'  )
+        ->select('componentes.id', 'componentes.nomCompo as nomCompo', 'tipocomponente.nombre'  )
         ->get();
-
-    //'$datosb' esto estaba en el compact estorbando ( CHAMORRO )
-
-       return view('Gestion', compact('datos') ); 
+       return view('Gestion', compact('datos','datosb') ); 
 
     }
 
@@ -48,7 +45,7 @@ class ControllerCrud extends Controller
     public function store(Request $request)
     {
         $datos= new componentesb();
-        $datos->nombre= $request->input('Nombre');
+        $datos->nombre= $request->input('nom');
         $datos->TipoComp= $request->input('TipoComp');
         $datos->Estado= $request->input('Estado');
         $datos->save();
@@ -80,7 +77,7 @@ class ControllerCrud extends Controller
     {
         
         $datos= componentesb::where('id',$id)->first();
-        return view ('Modificar',['datos'=>$datos]);
+        return view ('componentes',['datos'=>$datos]);
      
     }
 
@@ -95,12 +92,12 @@ class ControllerCrud extends Controller
     {
         $datos =componentesb::find($id);
 
-        $datos->Nombre = $request->input('Nombre');  
+        $datos->Nombre = $request->input('nom');  
         $datos->TipoComp = $request->input('TipoComp');  
         $datos->Estado = $request->input('Estado');  
 
          $datos->save();
-         return redirect('componentes');
+         return redirect('contenido');
     }
 
     /**
