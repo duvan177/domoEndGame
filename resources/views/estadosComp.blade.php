@@ -2,10 +2,9 @@
 @section('tittle', 'Estados')
 
 @section('contenido')
-
-
-
-
+<div class="container-fluid" style="width: 50%">
+<div class="card">
+  
 <table class="table" id="recargarTable"  >     
     <thead class="thead-dark" >       
       <tr>
@@ -18,15 +17,25 @@
     @foreach ($estados as $estado)  
 
     <tbody>
-      <tr >   
+      <tr > 
         <td> {{$estado->comName}}</td>
         <td> {{$estado->nombre}}</td>
-        <td>{{$estado->estado}}</td>
+        @if ($estado->estado=="Apagado" ||$estado->estado=="Cerrado"||$estado->estado=="0" )
+        <td style="color: red">{{$estado->estado}}</td>
+        @else
+        <td style="color: green">{{$estado->estado}}</td>
+
+            
+        @endif
+        
+        
+        
       </tr>          
     @endforeach  
   </tbody>
 </table>
-
+</div>
+</div>
 
 
 {{-- <script>

@@ -14,11 +14,27 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-folder-alt"></i> Componentes</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-wrench"></i> Gestion</a>
+                        <center><form action="componentes" >
+
+                            <button type="submit" class="btn btn-outline-secondary" style="width:100%">Gestion</button>
+
+                       </form></center>
                     </li>
-                       <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-equalizer"></i>Control</a>
+                    <li>
+                    <center><form action="control">
+
+                            <button type="submit" class="btn btn-outline-secondary" style="width:100%">Control</button>
+
+                       </form></center>
                     </li>
+                    <li>
+                            <center><form action="estados">
+        
+                                    <button type="submit" class="btn btn-outline-secondary" style="width:100%">Estados</button>
+        
+                               </form></center>
+                            </li>
+
                  
                 </ul>
             </li>
@@ -26,10 +42,18 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Usuarios</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="i#"><i class="icon-wrench"></i> Gestion</a>
+                            <center><form action="" >
+
+                                    <button type="submit" class="btn btn-outline-secondary" style="width:100%">Gestion</button>
+        
+                               </form></center>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-notebook"></i> Perfiles</a>
+                            <center><form action="" >
+
+                                    <button type="submit" class="btn btn-outline-secondary" style="width:100%">Perfiles</button>
+        
+                               </form></center>
                     </li>
                 </ul>
             </li>
@@ -37,7 +61,11 @@
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-calendar"></i> Horarios</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="i#"><i class="icon-wrench"></i> Gestion</a>
+                            <center><form action="" >
+
+                                    <button type="submit" class="btn btn-outline-secondary" style="width:100%">Gestion</button>
+        
+                               </form></center>
                     </li>
                   
                 </ul>

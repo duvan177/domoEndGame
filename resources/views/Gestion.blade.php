@@ -38,12 +38,15 @@
                                 <td>{{$da->nomCompo}}</td>
                                 <td>{{$da->nombre}}</td>
                                 <td>
-                                        <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#modalEditar">
+                                        <button type="button" class="btn btn-warning btn-sm"  data-toggle="modal" data-target="">
                                           <i class="icon-pencil"></i>
                                         </button> &nbsp;
+                                        
                                        
                                     </td>
                             </tr>
+
+                            
                             
                             @endforeach
                         </tbody>
@@ -155,11 +158,16 @@
                           
                       
             
-                    <!-- /.modal-content -->
+                
                 </div>
-                <!-- /.modal-dialog -->
+                
             </div>
-            </div>
+     </div>
+
+
+
+
+     
                                 
                                 @endforeach
                             </tbody>
@@ -172,7 +180,7 @@
             <!-- Fin ejemplo de tabla Listado -->
         
 
-        </div>
+    
         
         <!--Inicio del modal agregar/actualizar-->
         <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
@@ -219,6 +227,56 @@
             <!-- /.modal-dialog -->
         </div>
         </div>
+         <div class="modal fade" id="modalEditar2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-primary modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar componente</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <form action="componentes/{{$da->id}}" method="POST"  class="form-horizontal">
+                            {{method_field('PUTH')}}
+                                    {{ csrf_field() }}
+                                <div class="form-group row">
+                                    <label class="col-md-3 form-control-label" for="text-input">Nombre nuevo</label>
+                                    <div class="col-md-9">
+                                    <input type="text" id="nombre" name="nom" class="form-control" value="{{$dab->id}}">
+                                      
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 form-control-label">Tipo nuevo</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="descripcion" name="TipoComp" class="form-control" placeholder="Tipo del componente">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 form-control-label">Estado nuevo</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="descripcion" name="Estado" class="form-control" placeholder="Estado del componente">
+                                    </div>
+                                </div>
+                                <button type="sumbit" class="btn btn-secondary">Actualizar</button>
+                            </form>
+                        </div>
+                        
+                        
+                           
+                          
+                      
+            
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+     </div>
+
+                                
+       
+             
         <!--Fin del modal-->
         <!-- Inicio del modal Eliminar -->
         
