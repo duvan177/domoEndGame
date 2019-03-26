@@ -485,39 +485,45 @@ $.ajax({
 
 
 {{-- creamos el card e incrustamos los componentes de la BD --}}
+<main class="main">
+      <div class="container-fluid">
+
+<div class="card">
+      <div class="card-header">
 <center>
+      
 <div style="width: 100%; margin-top: 2%; ">
 <div style="width: 100%; max-height:auto;  ">
  @foreach ($componente as $componente)
 <div class="card mb-3" style="width: 100%; background:#1BD194;">  
     <div class="row no-gutters">
         <div class="col-md-4">
-            <img style="margin-left: 5%; height: 100px; width: 100px; margin-top:10%;" src="@if ($componente->nombre == "Puerta" )
+            <img style="margin-left: 5%; height: 100px; width: 100px; margin-top:10%;" src="@if ($componente->nomCompo == "Puerta" )
             {{$img = '/img/puerta.png' }}  @endif 
-            @if ($componente->nombre == "AireAcondicionado" )
+            @if ($componente->nomCompo == "AireAcondicionado" )
             {{$img = '/img/aire.png' }}  @endif 
-            @if ($componente->nombre == "Bombillo")
+            @if ($componente->nomCompo == "Bombillo")
             {{$img = '/img/bombillo.png' }}  @endif 
-            @if ($componente->nombre == "Camara")
+            @if ($componente->nomCompo == "Camara")
             {{$img = '/img/camara.png' }}  @endif 
-            @if ($componente->nombre == "InterruptorLamparas")
+            @if ($componente->nomCompo == "InterruptorLamparas")
             {{$img = '/img/interruptor.png' }}  @endif 
-            @if ($componente->nombre == "Dimmer")
+            @if ($componente->nomCompo == "Dimmer")
             {{$img = '/img/dimmer.png' }}  @endif
-            @if ($componente->nombre == "ControlTemperatura")
+            @if ($componente->nomCompo == "ControlTemperatura")
             {{$img = '/img/temperatura.png' }}  @endif
-            @if ($componente->nombre == "SensorMovimiento")
+            @if ($componente->nomCompo == "SensorMovimiento")
             {{$img = '/img/sensor.png' }}  @endif
-            @if ($componente->nombre == "Ventana")
+            @if ($componente->nomCompo == "Ventana")
             {{$img = '/img/ventana.png' }}  @endif  " 
             class="card-img" >
         </div>
 
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title"> {{$componente->nombre}}</h5>
+            <h5 class="card-title"> {{$componente->nomCompo}}</h5>
               <p class="card-text"><small class="text-muted">
-              @if ($componente->nombre == "Puerta" )  <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
+              @if ($componente->nomCompo == "Puerta" )  <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
                     <label class="btn btn-secondary active" id="puertaON">
                       <input type="radio" name="options" autocomplete="off" > OPEN
                     </label>
@@ -526,7 +532,7 @@ $.ajax({
                     </label>                                                
                 </div> 
                   @endif        
-                  @if ( $componente->nombre == "Ventana") <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
+                  @if ( $componente->nomCompo == "Ventana") <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
                       <label class="btn btn-secondary active" id="ventanaON">
                         <input type="radio" name="options1" id="option1" autocomplete="off" > OPEN
                       </label>
@@ -535,7 +541,7 @@ $.ajax({
                       </label>                                                
                   </div>                                                                     
                 @endif          
-            @if ($componente->nombre == "Bombillo") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+            @if ($componente->nomCompo == "Bombillo") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
                       <label class="btn btn-secondary active" id="bombilloON">
                         <input type="radio" name="options2" id="option1" autocomplete="off" > CONNECT
                       </label>
@@ -544,7 +550,7 @@ $.ajax({
                       </label>                        
                     </div>                     
                 @endif
-                @if ($componente->nombre == "SensorMovimiento") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+                @if ($componente->nomCompo == "SensorMovimiento") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
                     <label class="btn btn-secondary active" id="sensorON">
                       <input type="radio" name="options3" id="option1" autocomplete="off" > CONNECT
                     </label>
@@ -553,7 +559,7 @@ $.ajax({
                     </label>                        
                   </div>                     
               @endif
-              @if ($componente->nombre == "AireAcondicionado") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+              @if ($componente->nomCompo == "AireAcondicionado") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
                   <label class="btn btn-secondary active" id="aireON">
                     <input type="radio" name="options4" id="option1" autocomplete="off" > CONNECT
                   </label>
@@ -562,7 +568,7 @@ $.ajax({
                   </label>                        
                 </div>                     
             @endif
-            @if ($componente->nombre == "Camara") <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            @if ($componente->nomCompo == "Camara") <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary " id="camaraON">
                   <input type="radio" name="options5" id="option1" autocomplete="off" > CONNECT
                 </label>
@@ -571,7 +577,7 @@ $.ajax({
                 </label>                        
               </div>                     
           @endif
-          @if ($componente->nombre == "InterruptorLamparas") <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          @if ($componente->nomCompo == "InterruptorLamparas") <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active" id="interruptorON">
               <input type="radio" name="options6" id="option1" autocomplete="off" > CONNECT
             </label>
@@ -581,11 +587,11 @@ $.ajax({
           </div>                     
       @endif
           
-                  @if ($componente->nombre == "Dimmer" )                                     
+                  @if ($componente->nomCompo == "Dimmer" )                                     
                       <button type="button" class="btn btn-success" id="dinMenos"> - </button>                    
                       <button type="button" class="btn btn-success" id="dinMas"> + </button>                           
                   @endif
-                  @if ($componente->nombre  == "ControlTemperatura" ) <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+                  @if ($componente->nomCompo  == "ControlTemperatura" ) <div class="btn-group btn-group-toggle" data-toggle="buttons" >
                       <label class="btn btn-secondary active" id="swinON">
                         <input type="radio" name="options7" id="option1" autocomplete="off" > CONNECT
                       </label>
@@ -617,6 +623,11 @@ $.ajax({
 @endforeach 
 </div>
 </center>
+</div>
+            </div>
+      </div>
+</main>
+
 
 
   
