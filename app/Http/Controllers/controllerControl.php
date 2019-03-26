@@ -18,7 +18,7 @@ class controllerControl extends Controller
         $componente=componente::all(); 
        
 
-        return view ( 'vistaComponentes' , compact('componente')) ;
+        return view ( 'VistaComponentes' , compact('componente')) ;
     }
 
     /**

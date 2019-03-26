@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('contenido');
+
 Route::get('/contenido', function () {
     return view('contenido/contenido');
 });
 
 //CRUD COMPONENTES NICOLAS ROJAS
 Route::resource('componentes', 'ControllerCrud');
+Route::put('componentes/{id}','ControllerCrud@update');
+Route::delete('componentes/{id}','ControllerCrud@destroy');
 // CONTROL COMPONENTES NICOLAS CHAMORRO
 Route::resource('control','controllerControl');
 Route::get('estados', 'atributoController@index');
@@ -31,7 +34,7 @@ Route::post('connect','atributoController@conectar');
 Route::post('disconnect','atributoController@desconectar');
 Route::post('aireAcondicionado','atributoController@aireAcondicionado');
 Route::get('recargar', 'atributoController@recargarTable');
-Route::post('componentes/{id}','ControllerCrud@update'); 
+
 
 
 Route::get('sendEmail', function () {

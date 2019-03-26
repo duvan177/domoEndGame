@@ -8,8 +8,8 @@
     <meta name="description" content="Sistema Ventas Laravel Vue Js- IncanatoIT">
     <meta name="author" content="Incanatoit.com">
     <meta name="keyword" content="Sistema ventas Laravel Vue Js, Sistema compras Laravel Vue Js">
-    <link rel="shortcut icon" href="img/favicon.png">
-    <title>Sistema Ventas - IncanatoIT</title>
+    <link rel="shortcut icon" href="img/151 logo.png">
+    <title>domotic-151</title>
     <!-- Icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/simple-line-icons.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"></a>
+        <div><img  class="imagen"src="img/151 logo.png"  width="50" height="50px"></div>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -97,8 +97,8 @@
         
 
     <footer class="app-footer">
-        <span><a href="http://www.incanatoit.com/">IncanatoIT</a> &copy; 2017</span>
-        <span class="ml-auto">Desarrollado por <a href="http://www.incanatoit.com/">IncanatoIT</a></span>
+        <span>ADSI-151 &copy; 2018-2019</span>
+        <span class="ml-auto">Desarrollado por ADSI-151</span>
     </footer>
 
     <!-- Bootstrap and necessary plugins -->  
@@ -116,6 +116,9 @@ $('#btnModalEmail').on('click', function(e){
   $('#modalEmail').modal('show').find('#modal-body').load($(this).attr('href'));
 });
     </script>
+
+<style>
+</style>
 
 </body>
 

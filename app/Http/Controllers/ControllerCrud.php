@@ -91,6 +91,7 @@ class ControllerCrud extends Controller
     public function update(Request $request, $id)
     {
         $datos =componentesb::find($id);
+        
 
         $datos->Nombre = $request->input('nom');  
         $datos->TipoComp = $request->input('TipoComp');  

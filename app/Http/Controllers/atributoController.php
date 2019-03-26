@@ -15,8 +15,8 @@ class atributoController extends Controller{
         ->join('atributosxtipos', 'atributosxtipos.id', '=', 'estadoactualxcomponentes.idAtributoXtipo' )
         ->join('componentes', 'componentes.id', '=', 'estadoactualxcomponentes.idComponente' )
         ->join('estadosxatributos', 'estadosxatributos.id', '=', 'estadoactualxcomponentes.idEstadoActual' )
-        ->select ('estadoactualxcomponentes.id' , 'componentes.nombre as comName'  , 'atributosxtipos.nombre'  , 'estadosxatributos.estado')
-        ->orderBy('componentes.nombre')
+        ->select ('estadoactualxcomponentes.id' , 'componentes.nomCompo as comName'  , 'atributosxtipos.nombre'  , 'estadosxatributos.estado')
+        ->orderBy('componentes.nomCompo')
         ->get();
     
          return view ('estadosComp' , compact('estados'));

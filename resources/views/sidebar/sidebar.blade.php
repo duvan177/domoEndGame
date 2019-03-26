@@ -5,28 +5,28 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="main.html"><i class="icon-speedometer"></i> Escritorio Control</a>
+                <a class="nav-link active" href="main.html"><i class="icon-screen-desktop"></i> Escritorio</a>
             </li>
             <li class="nav-title">
                 Mantenimiento
             </li>
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-bag"></i> Componentes</a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-folder-alt"></i> Componentes</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Gestion"><i class="icon-bag"></i> Gestion</a>
+                        <a class="nav-link" href="#"><i class="icon-wrench"></i> Gestion</a>
                     </li>
                        <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="icon-bag"></i> Estado Components</a>
+                        <a class="nav-link" href="#"><i class="icon-equalizer"></i>Control</a>
                     </li>
                  
                 </ul>
             </li>
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-wallet"></i> Usuarios</a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-people"></i> Usuarios</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="i#"><i class="icon-wallet"></i> Gestion</a>
+                        <a class="nav-link" href="i#"><i class="icon-wrench"></i> Gestion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="icon-notebook"></i> Perfiles</a>
@@ -34,21 +34,16 @@
                 </ul>
             </li>
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-basket"></i> Horarios</a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-calendar"></i> Horarios</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="i#"><i class="icon-basket-loaded"></i> Gestion</a>
+                        <a class="nav-link" href="i#"><i class="icon-wrench"></i> Gestion</a>
                     </li>
                   
                 </ul>
             </li>
         
-            <li class="nav-item">
-                <a class="nav-link" href="main.html"><i class="icon-book-open"></i> Ayuda <span class="badge badge-danger">PDF</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="main.html"><i class="icon-info"></i> Acerca de...<span class="badge badge-info">IT</span></a>
-            </li>
+            
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>
