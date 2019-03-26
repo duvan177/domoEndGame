@@ -495,7 +495,7 @@ $.ajax({
 <div style="width: 100%; margin-top: 2%; ">
 <div style="width: 100%; max-height:auto;  ">
  @foreach ($componente as $componente)
-<div class="card mb-3" style="width: 100%; background:#1BD194;">  
+<div class="card mb-3" style="width: 100%;">  
     <div class="row no-gutters">
         <div class="col-md-4">
             <img style="margin-left: 5%; height: 100px; width: 100px; margin-top:10%;" src="@if ($componente->nomCompo == "Puerta" )
@@ -524,82 +524,85 @@ $.ajax({
             <h5 class="card-title"> {{$componente->nomCompo}}</h5>
               <p class="card-text"><small class="text-muted">
               @if ($componente->nomCompo == "Puerta" )  <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
-                    <label class="btn btn-secondary active" id="puertaON">
+                    <label class="btn btn-primary active" id="puertaON">
                       <input type="radio" name="options" autocomplete="off" > OPEN
                     </label>
-                    <label class="btn btn-secondary" id="puertaOFF">
+                    <label class="btn btn-danger" id="puertaOFF">
                       <input type="radio" name="options"  autocomplete="off"> CLOSE
                     </label>                                                
                 </div> 
                   @endif        
                   @if ( $componente->nomCompo == "Ventana") <div class="btn-grbtn-group-toggleoup " data-toggle="buttons" >
-                      <label class="btn btn-secondary active" id="ventanaON">
+                      <label class="btn btn-primary active" id="ventanaON">
                         <input type="radio" name="options1" id="option1" autocomplete="off" > OPEN
                       </label>
-                      <label class="btn btn-secondary" id="ventanaOFF">
+                      <label class="btn btn-danger" id="ventanaOFF">
                         <input type="radio" name="options1" id="option2" autocomplete="off"> CLOSE
                       </label>                                                
                   </div>                                                                     
                 @endif          
             @if ($componente->nomCompo == "Bombillo") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-                      <label class="btn btn-secondary active" id="bombilloON">
+                      <label class="btn btn-primary active" id="bombilloON">
                         <input type="radio" name="options2" id="option1" autocomplete="off" > CONNECT
                       </label>
-                      <label class="btn btn-secondary" id="bombilloOFF">
+                      <label class="btn btn-danger" id="bombilloOFF">
                         <input type="radio" name="options2" id="option2" autocomplete="off"> DISCONNECT
                       </label>                        
                     </div>                     
                 @endif
                 @if ($componente->nomCompo == "SensorMovimiento") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-                    <label class="btn btn-secondary active" id="sensorON">
+                    <label class="btn btn-primary active" id="sensorON">
                       <input type="radio" name="options3" id="option1" autocomplete="off" > CONNECT
                     </label>
-                    <label class="btn btn-secondary" id="sensorOFF">
+                    <label class="btn btn-danger" id="sensorOFF">
                       <input type="radio" name="options3" id="option2" autocomplete="off"> DISCONNECT
                     </label>                        
                   </div>                     
               @endif
               @if ($componente->nomCompo == "AireAcondicionado") <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-                  <label class="btn btn-secondary active" id="aireON">
+                  <label class="btn btn-primary active" id="aireON">
                     <input type="radio" name="options4" id="option1" autocomplete="off" > CONNECT
                   </label>
-                  <label class="btn btn-secondary" id="aireOFF">
+                  <label class="btn btn-danger" id="aireOFF">
                     <input type="radio" name="options4" id="option2" autocomplete="off"> DISCONNECT
                   </label>                        
                 </div>                     
             @endif
             @if ($componente->nomCompo == "Camara") <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary " id="camaraON">
+                <label class="btn btn-primary " id="camaraON">
                   <input type="radio" name="options5" id="option1" autocomplete="off" > CONNECT
                 </label>
-                <label class="btn btn-secondary active" id="camaraOFF">
+                <label class="btn btn-danger active" id="camaraOFF">
                   <input type="radio" name="options5" id="option2" autocomplete="off"> DISCONNECT
                 </label>                        
               </div>                     
           @endif
           @if ($componente->nomCompo == "InterruptorLamparas") <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active" id="interruptorON">
+            <label class="btn btn-primary active" id="interruptorON">
               <input type="radio" name="options6" id="option1" autocomplete="off" > CONNECT
             </label>
-            <label class="btn btn-secondary" id="interruptorOFF">
+            <label class="btn btn-danger" id="interruptorOFF">
               <input type="radio" name="options6" id="option2" autocomplete="off"> DISCONNECT
             </label>                        
           </div>                     
       @endif
           
-                  @if ($componente->nomCompo == "Dimmer" )                                     
+                  @if ($componente->nomCompo == "Dimmer" )
+                                                       
                       <button type="button" class="btn btn-success" id="dinMenos"> - </button>                    
                       <button type="button" class="btn btn-success" id="dinMas"> + </button>                           
-                  @endif
+                  
+                      @endif
                   @if ($componente->nomCompo  == "ControlTemperatura" ) <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-                      <label class="btn btn-secondary active" id="swinON">
+                      <label class="btn btn-primary active" id="swinON">
                         <input type="radio" name="options7" id="option1" autocomplete="off" > CONNECT
                       </label>
-                      <label class="btn btn-secondary" id="swinOFF">
+                      <label class="btn btn-danger" id="swinOFF">
                         <input type="radio" name="options7" id="option2" autocomplete="off"> DISCONNECT
                       </label>                        
                     </div> 
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <br>
+                    {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-primary "  id="fspeed1">
                           <input type="radio" name="options" id="option1" autocomplete="off" > 1
                         </label>
@@ -609,7 +612,8 @@ $.ajax({
                         <label class="btn btn-primary" id="fspeed3">
                           <input type="radio" name="options" id="option3" autocomplete="off"> 3
                         </label>
-                      </div> 
+                      </div>  --}}
+
                     <div class="btn-group btn-group-toggle" >
                        <button type="button" class="btn btn-success" id="menosTemp"> - </button>
                        <button type="button" class="btn btn-success" id="masTemp"> + </button>  

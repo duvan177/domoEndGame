@@ -4,9 +4,13 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
         <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="main.html"><i class="icon-screen-desktop"></i> Escritorio</a>
-            </li>
+                <li>
+                        <center><form action="contenido">
+    
+                                <button type="submit" class="btn btn-outline-secondary" style="width:100%">Escritorio</button>
+    
+                           </form></center>
+                        </li>
             <li class="nav-title">
                 Mantenimiento
             </li>
