@@ -499,23 +499,23 @@ $.ajax({
     <div class="row no-gutters">
         <div class="col-md-4">
             <img style="margin-left: 5%; height: 100px; width: 100px; margin-top:10%;" src="@if ($componente->nomCompo == "Puerta" )
-            {{$img = '/img/puerta.png' }}  @endif 
+            {{$img = asset('/img/puerta.png')}}  @endif 
             @if ($componente->nomCompo == "AireAcondicionado" )
-            {{$img = '/img/aire.png' }}  @endif 
+            {{$img = asset('/img/aire.png')}}  @endif 
             @if ($componente->nomCompo == "Bombillo")
-            {{$img = '/img/bombillo.png' }}  @endif 
+            {{$img = asset('/img/bombillo.png')}}  @endif 
             @if ($componente->nomCompo == "Camara")
-            {{$img = '/img/camara.png' }}  @endif 
+            {{$img = asset('/img/camara.png') }}  @endif 
             @if ($componente->nomCompo == "InterruptorLamparas")
-            {{$img = '/img/interruptor.png' }}  @endif 
+            {{$img = asset('/img/interruptor.png') }}  @endif 
             @if ($componente->nomCompo == "Dimmer")
-            {{$img = '/img/dimmer.png' }}  @endif
+            {{$img =asset('/img/dimmer.png') }}  @endif
             @if ($componente->nomCompo == "ControlTemperatura")
-            {{$img = '/img/temperatura.png' }}  @endif
+            {{$img = asset('/img/temperatura.png') }}  @endif
             @if ($componente->nomCompo == "SensorMovimiento")
-            {{$img = '/img/sensor.png' }}  @endif
+            {{$img = asset('/img/sensor.png') }}  @endif
             @if ($componente->nomCompo == "Ventana")
-            {{$img = '/img/ventana.png' }}  @endif  " 
+            {{$img = asset('/img/ventana.png') }}  @endif  " 
             class="card-img" >
         </div>
 
