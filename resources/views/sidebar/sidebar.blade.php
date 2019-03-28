@@ -53,7 +53,7 @@
                                </form></center>
                     </li>
                     <li class="nav-item">
-                            <center><form action="" >
+                            <center><form action="perfil" >
 
                                     <button type="submit" class="btn btn-outline-secondary" style="width:100%">Perfiles</button>
         
