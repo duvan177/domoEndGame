@@ -53,3 +53,13 @@ Mail::send('emails.Alertas', $data, function ($message) {
 });
 
 });
+
+//perfiles Felipe Estrada
+/*route::get('/perfildele{perfil}/destroy',[
+'uses'=>'PerfilController@destroy',
+'as'=>'perfildelete'
+
+]);*/
+
+route::resource('perfil','PerfilController');
+Route::delete('/perfildele/{perfil}', 'PerfilController@destroy');
